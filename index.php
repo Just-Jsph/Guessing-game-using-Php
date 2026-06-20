@@ -20,9 +20,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     );
 
     mysqli_stmt_bind_param($stmt, "ss", $email, $password);
-
     mysqli_stmt_execute($stmt);
-
     $result = mysqli_stmt_get_result($stmt);
 
     if(mysqli_num_rows($result) > 0){
@@ -57,6 +55,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         <p>Password</p>
         <input type="password" name="password" required>
         <button type="submit">Login</button>
+        <p>Don't have an account?</p>
+        <button type="button" onclick="window.location.href='register.php'">
+    Register here
+</button>
     </form>
 </body>
 </html>
